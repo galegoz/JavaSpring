@@ -1,11 +1,26 @@
 package com.lucasdudu.cursomc.domain;
 
+//para objetos poder serem gravados em arquivos ou trafegar em rede por exemplo.
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//notação JPA objeto relacional
+@Entity
 public class Categoria implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+	
+	//JPA - nome do campo no BD
+	@Id
+	//gerar id automático chave automática (depende do BD)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	
 	private String nome;
 	
 	public Categoria() {		
